@@ -1,0 +1,4 @@
+         ˆùJc   NUMERECACHEFILE            _   @  ~A  ¯U  îa  òo  W´  °) °‹ ° °©          ˆùJc              (   THIS_FILE_NEEDS_AT_LEAST_VERSION_v1.1.4         =
+×£p=ò?     fftdata       FTYPE=LLINT       ˆùJc       FTYPE=DOUBLE           FTYPE=DOUBLE           FTYPE=DOUBLE        ô                Zeit [s]
+   DTYPE=COMPLEXô                      ºW—c…¤?        ºW—c…´?        —c…È¾?        ºW—c…Ä?        ©-}Ä»¦É?        —c…ÈÎ?        Ãl$£¶ôÑ?        ºW—c…Ô?        ²B
+d×?        ©-}Ä»¦Ù?         ð$h7Ü?        —c…ÈÞ?        G÷êr`¬à?        Ãl$£¶ôá?        ?â]Ó=ã?        ºW—c…ä?        6ÍÐ3¹Íå?        ²B
