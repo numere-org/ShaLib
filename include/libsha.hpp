@@ -21,6 +21,7 @@
 
 #include <string>
 #include <fstream>
+#include <boost/nowide/fstream.hpp>
 
 
 /////////////////////////////////////////////////
@@ -54,6 +55,28 @@ std::string sha256(std::fstream& file);
 ///
 /////////////////////////////////////////////////
 std::string sha256(std::fstream& file, std::streampos start, std::streamsize length);
+
+/////////////////////////////////////////////////
+/// \brief Calculates the SHA-256 of the passed
+/// file stream.
+///
+/// \param file boost::nowide::fstream&
+/// \return std::string
+///
+/////////////////////////////////////////////////
+std::string sha256(boost::nowide::fstream& file);
+
+/////////////////////////////////////////////////
+/// \brief Calculates the SHA-256 of the selected
+/// section in the passed file stream.
+///
+/// \param file boost::nowide::fstream&
+/// \param start std::streampos
+/// \param length std::streamsize
+/// \return std::string
+///
+/////////////////////////////////////////////////
+std::string sha256(boost::nowide::fstream& file, std::streampos start, std::streamsize length);
 
 #endif // LIBSHA_HPP
 

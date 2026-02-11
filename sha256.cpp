@@ -1,5 +1,6 @@
 #include <cstring>
 #include <fstream>
+#include <boost/nowide/fstream.hpp>
 #include <string>
 
 #include "sha256.hpp"
@@ -195,7 +196,7 @@ std::string sha256(std::string input)
 
 std::string sha256(std::fstream& file, std::streampos start, std::streamsize length)
 {
-    file.seekg(start);
+    file.seekg(start, std::ios_base::beg);
     char* buffer = new char[length+1];
     length = file.readsome(buffer, length);
     std::string sContents(buffer, length);
@@ -209,6 +210,26 @@ std::string sha256(std::fstream& file)
     std::streampos pos = file.tellg();
     file.seekg(0, std::ios_base::end);
     std::streamsize len = file.tellg() - pos;
+    return sha256(file, pos, len);
+}
+
+std::string sha256(boost::nowide::fstream& file, std::streampos start, std::streamsize length)
+{
+    file.seekg(start, std::ios_base::beg);
+    char* buffer = new char[length+1];
+    length = file.readsome(buffer, length);
+    std::string sContents(buffer, length);
+    delete[] buffer;
+    return sha256(sContents);
+}
+
+
+std::string sha256(boost::nowide::fstream& file)
+{
+    std::streampos pos = file.tellg();
+    file.seekg(0, std::ios_base::end);
+    std::streamsize len = file.tellg() - pos;
+    file.clear();
     return sha256(file, pos, len);
 }
 
